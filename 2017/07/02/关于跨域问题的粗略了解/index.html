@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>关于跨域问题的粗略了解 | Hdrow Lee&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="前端知识" />
+    
+    <meta name="description" content="关于跨域问题的粗略了解同源: 协议 域名 端口号一致ajax请求中跨域跨域问题的解决方案1.jsonp返回的数据格式:        函数名({}) 2.后台给响应头加上1Access-Control-Allow-Origin: *     /*这种方法不安全*/ 3.反向代理1) 打开httpd.conf,找到如下两行 1234#LoadModule proxy_module modules/">
+<meta name="keywords" content="前端知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于跨域问题的粗略了解">
+<meta property="og:url" content="http://yoursite.com/2017/07/02/关于跨域问题的粗略了解/index.html">
+<meta property="og:site_name" content="Hdrow Lee&#39;s Blog">
+<meta property="og:description" content="关于跨域问题的粗略了解同源: 协议 域名 端口号一致ajax请求中跨域跨域问题的解决方案1.jsonp返回的数据格式:        函数名({}) 2.后台给响应头加上1Access-Control-Allow-Origin: *     /*这种方法不安全*/ 3.反向代理1) 打开httpd.conf,找到如下两行 1234#LoadModule proxy_module modules/">
+<meta property="og:image" content="http://yoursite.com/img/china-great-wall.jpg">
+<meta property="og:updated_time" content="2017-12-14T06:09:01.141Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于跨域问题的粗略了解">
+<meta name="twitter:description" content="关于跨域问题的粗略了解同源: 协议 域名 端口号一致ajax请求中跨域跨域问题的解决方案1.jsonp返回的数据格式:        函数名({}) 2.后台给响应头加上1Access-Control-Allow-Origin: *     /*这种方法不安全*/ 3.反向代理1) 打开httpd.conf,找到如下两行 1234#LoadModule proxy_module modules/">
+<meta name="twitter:image" content="http://yoursite.com/img/china-great-wall.jpg">
+    
+
+    
+
+    
+        <link rel="icon" href="/hdrow.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+</head>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title" style="position: relative;">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">所谓梦想，大抵是无穷尽的岁月已逝去，充满未知的时光还很漫长</p>
+                        </h2>
+                    
+                    <div id="busuanzi_container_site_pv" style="position:absolute;bottom:0px; right: 0px;color:#fff;">
+                        <span style="display:inline-block; width: 18px;margin-right: 5px;">
+                            <!-- <img src="css/images/people.png" style="width:100%;"> -->
+                        </span>访问总量：<span id="busuanzi_value_site_pv" style="color:#fff;vertical-align: top;"></span>次
+                    </div>
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <!-- <a class="main-nav-list-link" href="/">index.主页</a> -->
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <!-- <a class="main-nav-list-link" href="/">index.分类</a> -->
+                                    <a class="main-nav-list-link" href="/">分类</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <!-- <a class="main-nav-list-link" href="/index.html">index.关于</a> -->
+                                    <a class="main-nav-list-link" href="/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Cercar" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'categories',
+            TAGS: 'etiquetes',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<script>   
+    if($(window).width() < 768) {
+        $("#header-title .subtitle").css("line-height","28px");
+    }
+</script>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    Sense categoria
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-关于跨域问题的粗略了解" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        关于跨域问题的粗略了解
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2017/07/02/关于跨域问题的粗略了解/" class="article-date">
+            <time datetime="2017-07-02T06:25:17.000Z" itemprop="datePublished">2017-07-02</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/前端知识/">前端知识</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="/img/china-great-wall.jpg" alt=""></p>
+<h3 id="关于跨域问题的粗略了解"><a href="#关于跨域问题的粗略了解" class="headerlink" title="关于跨域问题的粗略了解"></a>关于跨域问题的粗略了解</h3><h4 id="同源-协议-域名-端口号一致"><a href="#同源-协议-域名-端口号一致" class="headerlink" title="同源: 协议 域名 端口号一致"></a>同源: 协议 域名 端口号一致</h4><h4 id="ajax请求中跨域跨域问题的解决方案"><a href="#ajax请求中跨域跨域问题的解决方案" class="headerlink" title="ajax请求中跨域跨域问题的解决方案"></a>ajax请求中跨域跨域问题的解决方案</h4><h5 id="1-jsonp"><a href="#1-jsonp" class="headerlink" title="1.jsonp"></a>1.jsonp</h5><p>返回的数据格式:        函数名({})</p>
+<h5 id="2-后台给响应头加上"><a href="#2-后台给响应头加上" class="headerlink" title="2.后台给响应头加上"></a>2.后台给响应头加上</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Access-Control-Allow-Origin: *     <span class="comment">/*这种方法不安全*/</span></div></pre></td></tr></table></figure>
+<h5 id="3-反向代理"><a href="#3-反向代理" class="headerlink" title="3.反向代理"></a>3.反向代理</h5><p>1) 打开httpd.conf,找到如下两行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#LoadModule proxy_module modules/mod_proxy.so</div><div class="line">#LoadModule proxy_http_module modules/mod_proxy_http.so</div><div class="line"></div><div class="line"># 去掉前面的#</div></pre></td></tr></table></figure>
+<p>2) 打开http-vhosts.conf,找到要配置的域名的节点,在virtualhost节点中新增如下两行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ProxyRequests off</div><div class="line">Proxypass / api http:// api.botue.com  </div><div class="line"># 后面的/ api http:// api.botue.com 是根据自己需要的域名来写的,此处仅参考</div></pre></td></tr></table></figure>
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2017/07/02/关于跨域问题的粗略了解/" data-id="cjbc0rrqu0003fcfh1pst6qme" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>seguir:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://www.twitter.com" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://m.facebook.com" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="http://weibo.com/login.php" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/12/13/手机端项目（SMVIC）flex布局时适配6s所遇到的问题/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">més nou</strong>
+        <p class="article-nav-title">
+        
+            手机端项目（SMVIC）flex布局时适配iPhone6s所遇到的问题
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/12/18/页面背景静默/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/12/18/页面背景静默/" class="title">页面背景静默</a></p>
+                            <p class="item-date"><time datetime="2017-12-18T06:06:13.000Z" itemprop="datePublished">2017-12-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/12/18/url后面加随机数/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/12/18/url后面加随机数/" class="title">url后面加随机数</a></p>
+                            <p class="item-date"><time datetime="2017-12-18T06:04:15.000Z" itemprop="datePublished">2017-12-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/12/18/有关js的加载与遍历/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/img/salt-lake.jpg)" alt="有关js的加载与遍历" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/12/18/有关js的加载与遍历/" class="title">有关js的加载与遍历</a></p>
+                            <p class="item-date"><time datetime="2017-12-18T05:28:23.000Z" itemprop="datePublished">2017-12-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/12/13/手机端项目（SMVIC）flex布局时适配6s所遇到的问题/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/img/shoes.jpg)" alt="手机端项目（SMVIC）flex布局时适配iPhone6s所遇到的问题" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/12/13/手机端项目（SMVIC）flex布局时适配6s所遇到的问题/" class="title">手机端项目（SMVIC）flex布局时适配iPhone6s所遇到的问题</a></p>
+                            <p class="item-date"><time datetime="2017-12-13T02:22:14.000Z" itemprop="datePublished">2017-12-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/07/02/关于跨域问题的粗略了解/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/img/china-great-wall.jpg)" alt="关于跨域问题的粗略了解" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/07/02/关于跨域问题的粗略了解/" class="title">关于跨域问题的粗略了解</a></p>
+                            <p class="item-date"><time datetime="2017-07-02T06:25:17.000Z" itemprop="datePublished">2017-07-02</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">arxius</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">etiquetes</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端知识/">前端知识</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/项目问题/">项目问题</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">etiqueta cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/前端知识/" style="font-size: 20px;">前端知识</a> <a href="/tags/项目问题/" style="font-size: 10px;">项目问题</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://hdrow.github.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2017 Hdrow·Lee</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">Hdrow</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+    
+</script>
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://yoursite.com/2017/07/02/关于跨域问题的粗略了解/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
