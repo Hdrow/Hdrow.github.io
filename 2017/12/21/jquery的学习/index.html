@@ -3,24 +3,22 @@
 <head>
     <meta charset="utf-8">
     
-    <title>有关js的加载与遍历 | Hdrow Lee&#39;s Blog</title>
+    <title>jquery的学习 | Hdrow Lee&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="前端知识" />
     
-    <meta name="description" content="js的加载1$(document).ready(function() &amp;#123;&amp;#125;) 这个使用是为了取代页面中的 window.onload,它是在页面加载完成之后才发生，保证所要执行的代码是在DOM元素加载完成的情况下执行的。防止文档在完全加载（就绪）之前运行 jQuery 代码。 如果在文档没有完全加载之前就运行函数，操作可能失败。 同时，document.ready()方法执行">
+    <meta name="description" content="jQuery名称冲突jQuery使用$符号作为jQuery的简介方式。 而某些其他的javaScript库中的函数（比如Prototype）同样使用$符号。 jQuery可以使用noConflict()的方法来解决该问题。 var jq = jQuery.noConflict(),这样就帮助使用名称（jq）来代替$符号。 jQuery中的animate使用animate() 方法几乎可以操作所有">
 <meta name="keywords" content="前端知识">
 <meta property="og:type" content="article">
-<meta property="og:title" content="有关js的加载与遍历">
-<meta property="og:url" content="http://yoursite.com/2017/12/18/有关js的加载与遍历/index.html">
+<meta property="og:title" content="jquery的学习">
+<meta property="og:url" content="http://yoursite.com/2017/12/21/jquery的学习/index.html">
 <meta property="og:site_name" content="Hdrow Lee&#39;s Blog">
-<meta property="og:description" content="js的加载1$(document).ready(function() &amp;#123;&amp;#125;) 这个使用是为了取代页面中的 window.onload,它是在页面加载完成之后才发生，保证所要执行的代码是在DOM元素加载完成的情况下执行的。防止文档在完全加载（就绪）之前运行 jQuery 代码。 如果在文档没有完全加载之前就运行函数，操作可能失败。 同时，document.ready()方法执行">
-<meta property="og:image" content="http://yoursite.com/img/salt-lake.jpg">
-<meta property="og:updated_time" content="2017-12-21T02:45:21.056Z">
+<meta property="og:description" content="jQuery名称冲突jQuery使用$符号作为jQuery的简介方式。 而某些其他的javaScript库中的函数（比如Prototype）同样使用$符号。 jQuery可以使用noConflict()的方法来解决该问题。 var jq = jQuery.noConflict(),这样就帮助使用名称（jq）来代替$符号。 jQuery中的animate使用animate() 方法几乎可以操作所有">
+<meta property="og:updated_time" content="2017-12-21T06:51:18.742Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="有关js的加载与遍历">
-<meta name="twitter:description" content="js的加载1$(document).ready(function() &amp;#123;&amp;#125;) 这个使用是为了取代页面中的 window.onload,它是在页面加载完成之后才发生，保证所要执行的代码是在DOM元素加载完成的情况下执行的。防止文档在完全加载（就绪）之前运行 jQuery 代码。 如果在文档没有完全加载之前就运行函数，操作可能失败。 同时，document.ready()方法执行">
-<meta name="twitter:image" content="http://yoursite.com/img/salt-lake.jpg">
+<meta name="twitter:title" content="jquery的学习">
+<meta name="twitter:description" content="jQuery名称冲突jQuery使用$符号作为jQuery的简介方式。 而某些其他的javaScript库中的函数（比如Prototype）同样使用$符号。 jQuery可以使用noConflict()的方法来解决该问题。 var jq = jQuery.noConflict(),这样就帮助使用名称（jq）来代替$符号。 jQuery中的animate使用animate() 方法几乎可以操作所有">
     
 
     
@@ -152,14 +150,14 @@
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-有关js的加载与遍历" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-jquery的学习" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        有关js的加载与遍历
+        jquery的学习
         </h1>
     
 
@@ -169,8 +167,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/12/18/有关js的加载与遍历/" class="article-date">
-            <time datetime="2017-12-18T05:28:23.000Z" itemprop="datePublished">2017-12-18</time>
+        <a href="/2017/12/21/jquery的学习/" class="article-date">
+            <time datetime="2017-12-21T03:02:58.000Z" itemprop="datePublished">2017-12-21</time>
         </a>
     </div>
 
@@ -184,18 +182,41 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p><img src="/img/salt-lake.jpg" alt=""></p>
-<h3 id="js的加载"><a href="#js的加载" class="headerlink" title="js的加载"></a>js的加载</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;)</div></pre></td></tr></table></figure>
-<p>这个使用是为了取代页面中的 window.onload,它是在页面加载完成之后才发生，保证所要执行的代码是在DOM元素加载完成的情况下执行的。防止文档在完全加载（就绪）之前运行 jQuery 代码。</p>
-<p>如果在文档没有完全加载之前就运行函数，操作可能失败。</p>
-<p><strong>同时，document.ready()方法执行速度比onload()方法要快</strong></p>
-<h3 id="js开始地方的图片加载"><a href="#js开始地方的图片加载" class="headerlink" title="js开始地方的图片加载"></a>js开始地方的图片加载</h3><p>js在最开始的地方如公共加载区域要把当前页面所需要的所有图片都加载进去，这样会提高整体页面的加载速度。</p>
-<p>图片预加载代码：</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadImages</span><span class="params">()</span> &#123;</span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">loadImg</span><span class="params">(src)</span> &#123;</span></div><div class="line">		var img = new Image();</div><div class="line">		img.src = src;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(var <span class="built_in">i</span> = <span class="number">0</span>; <span class="built_in">i</span> &lt; data.<span class="built_in">length</span>; <span class="built_in">i</span>++) &#123;</div><div class="line">		loadImg(data[i].img);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="有关遍历寻找元素"><a href="#有关遍历寻找元素" class="headerlink" title="有关遍历寻找元素"></a>有关遍历寻找元素</h3><p>1.在js代码中，$在一开始的时候就需要var一次，如</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> _self = $(<span class="keyword">this</span>)</div></pre></td></tr></table></figure>
-<p>因为每使用一次$就相当于在整个页面中重新寻找一次此元素，花费时间会增加很多</p>
-<p>2.少使用find()来寻找页面元素，用children()更快，因为find会遍历寻找，时间要稍微慢一些</p>
+            <h4 id="jQuery名称冲突"><a href="#jQuery名称冲突" class="headerlink" title="jQuery名称冲突"></a>jQuery名称冲突</h4><p>jQuery使用$符号作为jQuery的简介方式。</p>
+<p>而某些其他的javaScript库中的函数（比如Prototype）同样使用$符号。</p>
+<p>jQuery可以使用noConflict()的方法来解决该问题。</p>
+<h5 id="var-jq-jQuery-noConflict"><a href="#var-jq-jQuery-noConflict" class="headerlink" title="var jq = jQuery.noConflict(),"></a>var jq = jQuery.noConflict(),</h5><p>这样就帮助使用名称（jq）来代替$符号。</p>
+<h3 id="jQuery中的animate使用"><a href="#jQuery中的animate使用" class="headerlink" title="jQuery中的animate使用"></a>jQuery中的animate使用</h3><p>animate() 方法几乎可以操作所有 CSS 属性；</p>
+<p>不过，需要记住一件重要的事情：当使用 animate() 时，必须使用 Camel 标记法书写所有的属性名，比如，必须使用 paddingLeft 而不是 padding-left，使用 marginRight 而不是 margin-right，等等。</p>
+<h4 id="jQuery种的获得内容text-、html-以及-val"><a href="#jQuery种的获得内容text-、html-以及-val" class="headerlink" title="jQuery种的获得内容text()、html() 以及 val()"></a>jQuery种的获得内容text()、html() 以及 val()</h4><ul>
+<li>text() - 设置或返回所选元素的文本内容</li>
+</ul>
+<ul>
+<li>html() - 设置或返回所选元素的内容（包括 HTML 标记）（即会返回html的标签）</li>
+<li>val() - 设置或返回表单字段的值</li>
+</ul>
+<h4 id="jQuery尺寸方法"><a href="#jQuery尺寸方法" class="headerlink" title="jQuery尺寸方法"></a>jQuery尺寸方法</h4><p>width() 方法设置或返回元素的宽度（不包括内边距、边框或外边距）。</p>
+<p>height() 方法设置或返回元素的高度（不包括内边距、边框或外边距）。</p>
+<p>innerWidth() 方法返回元素的宽度（包括内边距）。</p>
+<p>innerHeight() 方法返回元素的高度（包括内边距）。</p>
+<p>outerWidth() 方法返回元素的宽度（包括内边距和边框）。</p>
+<p>outerHeight() 方法返回元素的高度（包括内边距和边框）。</p>
+<p>outerWidth(true) 方法返回元素的宽度（包括内边距、边框和外边距）。</p>
+<p>outerHeight(true) 方法返回元素的高度（包括内边距、边框和外边距）。</p>
+<h4 id="jQuery遍历（同胞遍历）"><a href="#jQuery遍历（同胞遍历）" class="headerlink" title="jQuery遍历（同胞遍历）"></a>jQuery遍历（同胞遍历）</h4><ul>
+<li>siblings()             所有的同胞元素    </li>
+<li>next()                          下一个同胞元素  </li>
+<li>nextAll()                      下一个元素的所有同胞元素</li>
+<li>nextUntil()                   $(“h2”).nextUntil(“h6”),介于h2与h6之间的所有元素</li>
+<li>prev()                          </li>
+<li>prevAll()</li>
+<li>prevUntil()</li>
+</ul>
+<h4 id="jQuery过滤"><a href="#jQuery过滤" class="headerlink" title="jQuery过滤"></a>jQuery过滤</h4><p>first()方法;</p>
+<p>last()方法；</p>
+<p>eq()方法；</p>
+<p>filter()方法：规定一个标准$(“p”).filter(“.intro”);所有带intro类名的</p>
+<p>not()方法：返回不匹配标准的所有元素。</p>
 
         </div>
         <footer class="article-footer">
@@ -203,7 +224,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2017/12/18/有关js的加载与遍历/" data-id="cjbg4pide0004hcfhis0oeelz" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="http://yoursite.com/2017/12/21/jquery的学习/" data-id="cjbg4pid30001hcfhnctoq1v6" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -324,20 +345,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2017/12/18/url后面加随机数/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">més nou</strong>
-        <p class="article-nav-title">
-        
-            url后面加随机数
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/12/13/手机端项目（SMVIC）flex布局时适配6s所遇到的问题/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/12/18/页面背景静默/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">antic</strong>
-        <p class="article-nav-title">手机端项目（SMVIC）flex布局时适配iPhone6s所遇到的问题</p>
+        <p class="article-nav-title">页面背景静默</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -536,7 +547,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://yoursite.com/2017/12/18/有关js的加载与遍历/';
+    var disqus_url = 'http://yoursite.com/2017/12/21/jquery的学习/';
     
     (function() {
     var dsq = document.createElement('script');
