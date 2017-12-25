@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>css3中的animate的语法 | Hdrow Lee&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="前端知识" />
+    
+    <meta name="description" content="关于css3中的animation的语法在使用animate之前，要先把它捆绑到某个选择器，否则不会产生效果。至少连个属性：绑定动画名称和动画的时长。 1div &amp;#123; animation: myfirst 5s; &amp;#125; 例： 1animation: myfirst 5s linear 2s infinite alternate; 展开的话： 123456789animation-">
+<meta name="keywords" content="前端知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css3中的animate的语法">
+<meta property="og:url" content="http://yoursite.com/2017/12/25/css3中的animate的语法/index.html">
+<meta property="og:site_name" content="Hdrow Lee&#39;s Blog">
+<meta property="og:description" content="关于css3中的animation的语法在使用animate之前，要先把它捆绑到某个选择器，否则不会产生效果。至少连个属性：绑定动画名称和动画的时长。 1div &amp;#123; animation: myfirst 5s; &amp;#125; 例： 1animation: myfirst 5s linear 2s infinite alternate; 展开的话： 123456789animation-">
+<meta property="og:image" content="http://yoursite.com/img/girl.jpg">
+<meta property="og:updated_time" content="2017-12-25T09:16:10.863Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css3中的animate的语法">
+<meta name="twitter:description" content="关于css3中的animation的语法在使用animate之前，要先把它捆绑到某个选择器，否则不会产生效果。至少连个属性：绑定动画名称和动画的时长。 1div &amp;#123; animation: myfirst 5s; &amp;#125; 例： 1animation: myfirst 5s linear 2s infinite alternate; 展开的话： 123456789animation-">
+<meta name="twitter:image" content="http://yoursite.com/img/girl.jpg">
+    
+
+    
+
+    
+        <link rel="icon" href="/hdrow.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+</head>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title" style="position: relative;">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">所谓梦想，大抵是无穷尽的岁月已逝去，充满未知的时光还很漫长</p>
+                        </h2>
+                    
+                    <div id="busuanzi_container_site_pv" style="position:absolute;bottom:0px; right: 0px;color:#fff;">
+                        <span style="display:inline-block; width: 18px;margin-right: 5px;">
+                            <!-- <img src="css/images/people.png" style="width:100%;"> -->
+                        </span>访问总量：<span id="busuanzi_value_site_pv" style="color:#fff;vertical-align: top;"></span>次
+                    </div>
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <!-- <a class="main-nav-list-link" href="/">index.主页</a> -->
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <!-- <a class="main-nav-list-link" href="/">index.分类</a> -->
+                                    <a class="main-nav-list-link" href="/">分类</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <!-- <a class="main-nav-list-link" href="/index.html">index.关于</a> -->
+                                    <a class="main-nav-list-link" href="/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Cercar" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'categories',
+            TAGS: 'etiquetes',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<script>   
+    if($(window).width() < 768) {
+        $("#header-title .subtitle").css("line-height","28px");
+    }
+</script>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    Sense categoria
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-css3中的animate的语法" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        css3中的animate的语法
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2017/12/25/css3中的animate的语法/" class="article-date">
+            <time datetime="2017-12-25T08:52:41.000Z" itemprop="datePublished">2017-12-25</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/前端知识/">前端知识</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="/img/girl.jpg" alt="girl"></p>
+<h4 id="关于css3中的animation的语法"><a href="#关于css3中的animation的语法" class="headerlink" title="关于css3中的animation的语法"></a>关于css3中的animation的语法</h4><p>在使用animate之前，要先把它捆绑到某个选择器，否则不会产生效果。至少连个属性：绑定动画名称和动画的时长。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span> &#123; <span class="attribute">animation</span>: myfirst <span class="number">5s</span>; &#125;</div></pre></td></tr></table></figure>
+<p>例：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">animation: myfirst <span class="number">5s</span> linear <span class="number">2s</span> infinite alternate;</div></pre></td></tr></table></figure>
+<p>展开的话：</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">animation-name</span>: myfirst;               	规定需要绑定到选择器的 keyframe 名称。</div><div class="line"><span class="attribute">animation-duration</span>: <span class="number">5s</span>;       			规定完成动画所花费的时间，以秒或毫秒计。</div><div class="line"><span class="attribute">animation-timing-function</span>: linear;  	对应的值为"linear",动画从头到尾的速度是相同的。 </div><div class="line"><span class="attribute">animation-delay</span>: <span class="number">2s</span>;              		规定在动画开始之前的延迟,此处 <span class="selector-class">.4s</span> 为0<span class="selector-class">.4</span>秒</div><div class="line"><span class="attribute">animation-iteration-count</span>: infinite;    对应的值为"infinite",动画无限次播放。</div><div class="line"><span class="attribute">animation-direction</span>: alternate;         对应的值为"alternate",轮流反向播放动画。</div><div class="line"><span class="attribute">animation-play-state</span>: running;  		（<span class="attribute">animation-play-state</span>:paused;暂停动画）</div><div class="line">&lt;!--如果 <span class="attribute">animation-direction</span> 值是 "alternate"，</div><div class="line">则动画会在奇数次数（1、3、5 等等）正常播放，而在偶数次数（2、4、6 等等）向后播放。--&gt;</div></pre></td></tr></table></figure>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2017/12/25/css3中的animate的语法/" data-id="cjblznbsj00009cfhnet567xc" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>seguir:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://www.twitter.com" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://m.facebook.com" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="http://weibo.com/login.php" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/12/21/jquery的学习/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">antic</strong>
+        <p class="article-nav-title">jquery的学习</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/12/25/css3中的animate的语法/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/img/girl.jpg)" alt="css3中的animate的语法" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/12/25/css3中的animate的语法/" class="title">css3中的animate的语法</a></p>
+                            <p class="item-date"><time datetime="2017-12-25T08:52:41.000Z" itemprop="datePublished">2017-12-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/12/21/jquery的学习/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/12/21/jquery的学习/" class="title">jquery的学习</a></p>
+                            <p class="item-date"><time datetime="2017-12-21T03:02:58.000Z" itemprop="datePublished">2017-12-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/12/18/页面背景静默/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/img/ake-prags-italy-1053.jpg)" alt="页面背景静默" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/12/18/页面背景静默/" class="title">页面背景静默</a></p>
+                            <p class="item-date"><time datetime="2017-12-18T06:06:13.000Z" itemprop="datePublished">2017-12-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/12/18/url后面加随机数/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/img/math.jpg)" alt="url后面加随机数" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/12/18/url后面加随机数/" class="title">url后面加随机数</a></p>
+                            <p class="item-date"><time datetime="2017-12-18T06:04:15.000Z" itemprop="datePublished">2017-12-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/12/18/有关js的加载与遍历/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/img/salt-lake.jpg)" alt="有关js的加载与遍历" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/12/18/有关js的加载与遍历/" class="title">有关js的加载与遍历</a></p>
+                            <p class="item-date"><time datetime="2017-12-18T05:28:23.000Z" itemprop="datePublished">2017-12-18</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">arxius</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">etiquetes</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端知识/">前端知识</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/项目问题/">项目问题</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">etiqueta cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/前端知识/" style="font-size: 20px;">前端知识</a> <a href="/tags/项目问题/" style="font-size: 10px;">项目问题</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://hdrow.github.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2017 Hdrow·Lee</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">Hdrow</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+    
+</script>
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://yoursite.com/2017/12/25/css3中的animate的语法/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
